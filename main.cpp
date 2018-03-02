@@ -6,7 +6,7 @@
 
 #pragma comment(lib, "libskyroom.lib")
 
-#include "libs/libskyroom/headers/skyroom.h"
+#include "libs/libskyroom/skyroom.h"
 
 
 using namespace std;

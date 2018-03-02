@@ -1,4 +1,4 @@
-#include "../headers/skyroom.h"
+#include "../skyroom.h"
 
 int lib_main()
 {

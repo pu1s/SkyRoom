@@ -10,7 +10,7 @@ set(SKYROOM_LIB libs/libskyroom/src/skyroom.cpp)
 
 add_library(libskyroom STATIC ${SKYROOM_LIB})
 
-set(SKYROOM_LIB_HEADERS libs/libskyroom/headers)
+set(SKYROOM_LIB_HEADERS libs/libskyroom)
 
 include_directories(${SKYROOM_LIB_HEADERS})  
 

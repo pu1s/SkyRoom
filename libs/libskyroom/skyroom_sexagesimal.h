@@ -81,15 +81,13 @@ typedef class SKYROOM_API sexagesimal_tag
 	HMS					__hms__;
 	float_value			__val__;
 public:
-	sexagesimal_tag() noexcept
-	{
-		__dms__ =		DMS();
-		__hms__ =		HMS();
-		__val__ =		SEXAGESIMAL_ZERO;
-	}
+	sexagesimal_tag() noexcept;
+
 	sexagesimal_tag(const DMS& dms_) noexcept: __val__(SEXAGESIMAL_ZERO)
 	{
-		assert(!(&dms_));
+		assert(!&dms_);
 		__dms__ = dms_;
 	}
+private:
+
 }sexagesimal, *SEXAGESIMAL;

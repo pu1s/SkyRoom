@@ -77,17 +77,29 @@ typedef float float_value;
 
 typedef class SKYROOM_API sexagesimal_tag
 {
+
 	DMS					__dms__;
 	HMS					__hms__;
 	float_value			__val__;
 public:
 	sexagesimal_tag() noexcept;
 
-	sexagesimal_tag(const DMS& dms_) noexcept: __val__(SEXAGESIMAL_ZERO)
-	{
-		assert(!&dms_);
-		__dms__ = dms_;
-	}
-private:
+	sexagesimal_tag(const DMS& dms_) noexcept;
 
+	
 }sexagesimal, *SEXAGESIMAL;
+
+namespace skyroom
+{
+	namespace helpers
+	{
+		static void to_hms(const DMS& dms_, HMS& hms_) noexcept;
+
+		template<typename FROM, typename TO, class RESULT = float>
+		static RESULT swap(const FROM& __from__, TO __to__)
+		{
+			
+		}
+		
+	}
+}

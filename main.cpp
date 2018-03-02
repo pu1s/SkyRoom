@@ -8,11 +8,12 @@
 
 #include "libs/libskyroom/headers/skyroom.h"
 
+
 using namespace std;
 
 int main()
 {
-	lib_main();
+	DMS dms;
 	cout << "Hello Skyroom!!!" << endl;
 #ifdef WIN32
 	system("pause");

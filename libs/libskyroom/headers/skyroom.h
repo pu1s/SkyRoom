@@ -34,7 +34,7 @@ SOFTWARE.
 #endif // WIN32
 
 #include "skyroom_global.h"
-#include "skyroom_platforms.h"
+#include "skyroom_sexagesimal.h"
 
 using namespace std;
 

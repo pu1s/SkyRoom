@@ -27,12 +27,69 @@ SOFTWARE.
 
 #pragma once
 
+#include <cassert>
+
 #include "skyroom_platforms.h"
+//
+// Definition of zero value
+//
+#define SEXAGESIMAL_ZERO			(float)0
+//
+// Definition of limits sexagesimal value
+//
+#define SEXAGESIMAL_DEGREE_MIN		0
+#define SEXAGESIMAL_DEGREE_MAX		360
+#define SEXAGESIMAL_MINUTS_MIN		0
+#define SEXAGESIMAL_MINUTS_MAX		59
+#define SEXAGESIMAL_SECONDS_MIN		(float)0
+#define SEXAGESIMAL_SECONDS_MAX		(float)59.99999
 
-namespace skyroom
+//
+// Definition of angle representation
+//
+
+typedef struct SKYROOM_API angle_tag
 {
-	struct SKYROOM_API angle_tag
-	{
+	signed degree;
+	unsigned minuts;
+	float seconds;
+} angle, DMS;
 
-	};
-}
+//
+// Definition of time representation
+//
+
+typedef struct SKYROOM_API time_tag
+{
+	signed hours;
+	unsigned minuts;
+	float seconds;
+} time, HMS;
+
+//
+// Definition of float value representation
+//
+typedef float float_value;
+
+//
+// Definition of sexagesimal representation
+//
+
+typedef class SKYROOM_API sexagesimal_tag
+{
+	DMS					__dms__;
+	HMS					__hms__;
+	float_value			__val__;
+public:
+	sexagesimal_tag() noexcept
+	{
+		__dms__ =		DMS();
+		__hms__ =		HMS();
+		__val__ =		SEXAGESIMAL_ZERO;
+	}
+	sexagesimal_tag(const DMS& dms_) noexcept
+	{
+		assert(!(&dms_));
+		__dms__ = dms_;
+	}
+}sexagesimal, *SEXAGESIMAL;

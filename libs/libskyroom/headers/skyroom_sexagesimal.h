@@ -26,22 +26,3 @@ SOFTWARE.
 */
 
 #pragma once
-
-#define SKYROOM_EXPORT
-
-#if defined _WIN32 || defined __CYGWIN__
-#ifdef SKYROOM_EXPORT
-#if defined __GNUC__
-#define SKYROOM_API __attribute__  ((dllexport))
-#else
-#define SKYROOM_API __declspec(dllexport)
-#endif //__GNUC__
-#else
-#if defined __GNUC__
-#define SKYROOM_API __attribute__  ((dllimport))
-#else
-#define SKYROOM_API __declspec(dllimport)
-#endif //__GNUC__
-#endif
-#endif //defined _WIN32 || defined __CYGWIN__
-

@@ -26,3 +26,13 @@ SOFTWARE.
 */
 
 #pragma once
+
+#include "skyroom_platforms.h"
+
+namespace skyroom
+{
+	struct SKYROOM_API angle_tag
+	{
+
+	};
+}

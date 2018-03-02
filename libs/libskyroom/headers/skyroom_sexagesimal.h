@@ -87,7 +87,7 @@ public:
 		__hms__ =		HMS();
 		__val__ =		SEXAGESIMAL_ZERO;
 	}
-	sexagesimal_tag(const DMS& dms_) noexcept
+	sexagesimal_tag(const DMS& dms_) noexcept: __val__(SEXAGESIMAL_ZERO)
 	{
 		assert(!(&dms_));
 		__dms__ = dms_;

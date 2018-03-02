@@ -4,6 +4,7 @@
 #include <cstdlib>
 #endif // WIN32
 
+#include "skyroom_global.h"
 
 using namespace std;
 

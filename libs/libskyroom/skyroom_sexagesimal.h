@@ -56,9 +56,9 @@ SOFTWARE.
 
 typedef struct SKYROOM_API angle_tag
 {
-	signed degree;
-	unsigned minuts;
-	float seconds;
+	SEXAGESIMAL_DEGREE				degree;
+	SEXAGESIMAL_MINUTS				minuts;
+	SEXAGESIMAL_SECONDS				seconds;
 } angle, DMS;
 
 //

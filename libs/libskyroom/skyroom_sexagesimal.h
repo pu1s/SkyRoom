@@ -33,7 +33,7 @@ SOFTWARE.
 //
 // Definition of zero value
 //
-#define SEXAGESIMAL_ZERO			(float)0
+#define SEXAGESIMAL_ZERO			0.0f
 //
 // Definition of limits sexagesimal value
 //
@@ -41,12 +41,18 @@ SOFTWARE.
 #define SEXAGESIMAL_DEGREE_MAX		360
 #define SEXAGESIMAL_MINUTS_MIN		0
 #define SEXAGESIMAL_MINUTS_MAX		59
-#define SEXAGESIMAL_SECONDS_MIN		(float)0
-#define SEXAGESIMAL_SECONDS_MAX		(float)59.99999
+#define SEXAGESIMAL_SECONDS_MIN		0.0f
+#define SEXAGESIMAL_SECONDS_MAX		59.99999f
 
 //
-// Definition of angle representation
+// Definition of angle and time representation
 //
+#define SEXAGESIMAL_DEGREE			signed
+#define SEXAGESIMAL_HOURS			signed
+#define SEXAGESIMAL_MINUTS			unsigned
+#define SEXAGESIMAL_SECONDS			float
+#define SEXAGESIMAL_FVALUE			float
+#define SEXAGESIMAL_DVALUE			double
 
 typedef struct SKYROOM_API angle_tag
 {

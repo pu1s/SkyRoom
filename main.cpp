@@ -13,7 +13,9 @@ using namespace std;
 
 int main()
 {
-	DMS dms;
+	
+	
+	//skyroom::sexagesimal::helpers::evaluate_parameters(hms, nullptr, false);
 	cout << "Hello Skyroom!!!" << endl;
 #ifdef WIN32
 	system("pause");

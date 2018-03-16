@@ -29,6 +29,10 @@ SOFTWARE.
 
 #include <iostream>
 
+#define NOT_IMPL
+#define IMPLEMENTED
+
+
 #ifdef WIN32
 #include <cstdlib>
 #endif // WIN32

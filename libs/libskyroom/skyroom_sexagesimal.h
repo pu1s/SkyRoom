@@ -26,27 +26,38 @@ SOFTWARE.
 */
 
 #pragma once
-
-#include <cassert>
-
+//
 #include "skyroom_platforms.h"
 //
-// Definition of zero value
-//
+#include <string>
+#include <cassert>
+#include <regex>
+namespace skyroom
+{
+	namespace sexagesimal
+	{
+		//
+		// Definition of zero value
+		//
 #define SEXAGESIMAL_ZERO			0.0f
-//
-// Definition of limits sexagesimal value
-//
+#define SEXAGESIMAL_ZERO_PTR		nullptr
+#define SEXAGESIMAL_NPTR			SEXAGESIMAL_ZEOO_PTR
+#define SEXAGESIMAL_RESULT			bool
+		//
+		// Definition of limits sexagesimal value
+		//
 #define SEXAGESIMAL_DEGREE_MIN		0
 #define SEXAGESIMAL_DEGREE_MAX		360
+#define SEXAGESIMAL_HOURS_MIN		0
+#define SEXAGESIMAL_HOURS_MAX		23
 #define SEXAGESIMAL_MINUTS_MIN		0
 #define SEXAGESIMAL_MINUTS_MAX		59
 #define SEXAGESIMAL_SECONDS_MIN		0.0f
 #define SEXAGESIMAL_SECONDS_MAX		59.99999f
 
-//
-// Definition of angle and time representation
-//
+		//
+		// Definition of angle and time representation
+		//
 #define SEXAGESIMAL_DEGREE			signed
 #define SEXAGESIMAL_HOURS			signed
 #define SEXAGESIMAL_MINUTS			unsigned
@@ -54,58 +65,91 @@ SOFTWARE.
 #define SEXAGESIMAL_FVALUE			float
 #define SEXAGESIMAL_DVALUE			double
 
-typedef struct SKYROOM_API angle_tag
-{
-	SEXAGESIMAL_DEGREE				degree;
-	SEXAGESIMAL_MINUTS				minuts;
-	SEXAGESIMAL_SECONDS				seconds;
-} angle, DMS;
+		// 
+		// Definition of angle representation 
+		//
+		typedef struct SKYROOM_API angle_tag
+		{
+			SEXAGESIMAL_DEGREE				degree;				// Degree
+			SEXAGESIMAL_MINUTS				minuts;				// Minutes
+			SEXAGESIMAL_SECONDS				seconds;			// Seconds
+		} SEXAGESIMAL_DMS, *sexagesimal_angle;
 
-//
-// Definition of time representation
-//
+		//
+		// Definition of time representation
+		//
 
-typedef struct SKYROOM_API time_tag
-{
-	signed hours;
-	unsigned minuts;
-	float seconds;
-} time, HMS;
+		typedef struct SKYROOM_API time_tag
+		{
+			SEXAGESIMAL_HOURS				hours;				// Hourse
+			SEXAGESIMAL_MINUTS				minuts;				// Minutes
+			SEXAGESIMAL_SECONDS				seconds;			// Seconds
+		}SEXAGESIMAL_HMS, *sexagesimal_time;
 
-//
-// Definition of float value representation
-//
-typedef float float_value;
 
-//
-// Definition of sexagesimal representation
-//
+		//
+		// Definition of sexagesimal representation
+		//
 
-typedef class SKYROOM_API sexagesimal_tag
-{
+		typedef class SKYROOM_API sexagesimal_tag
+		{
 
-	DMS					__dms__;
-	HMS					__hms__;
-	float_value			__val__;
-public:
-	sexagesimal_tag() noexcept;
+			SEXAGESIMAL_DMS					__dms__;			// date value represent
+			SEXAGESIMAL_HMS					__hms__;			// time value represent
+			SEXAGESIMAL_FVALUE				__val__;			// float value represent
+		public:
+			sexagesimal_tag() noexcept;
 
-	sexagesimal_tag(const DMS& dms_) noexcept;
+			/*
+			C-tor of float value definition
+			*/
+			sexagesimal_tag(const SEXAGESIMAL_FVALUE& val_) noexcept
+			{
+				__val__ = val_;
+#
+				//TODO: Not implemented 
+			}
 
-	
-}sexagesimal, *SEXAGESIMAL;
+			/*
+			C-tor of SEXAGESIMAL_DMS struct definition
+			*/
+			sexagesimal_tag(const SEXAGESIMAL_DMS& val_) noexcept
+			{
+				__dms__ = val_;
+
+				//TODO: Not implemented 
+			}
+
+			/*
+			C-tor of SEXAGESIMAL_HMS struct definition
+			*/
+			sexagesimal_tag(const SEXAGESIMAL_HMS& val_) noexcept
+			{
+				__hms__ = val_;
+
+				//TODO: Not implemented
+			}
+
+			/*
+			C-tor of string value definition
+			*/
+			sexagesimal_tag(const std::string& val_) noexcept
+			{
+				//TODO: Not implemented 
+			}
+
+		}sexagesimal, *SEXAGESIMAL;
+
+	}
+}
 
 namespace skyroom
 {
-	namespace helpers
+	namespace sexagesimal
 	{
-		static void to_hms(const DMS& dms_, HMS& hms_) noexcept;
-
-		template<typename FROM, typename TO, class RESULT = float>
-		static RESULT swap(const FROM& __from__, TO __to__)
+		namespace helpers
 		{
-			
+
 		}
-		
 	}
 }

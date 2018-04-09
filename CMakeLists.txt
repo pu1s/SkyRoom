@@ -2,20 +2,12 @@ cmake_minimum_required(VERSION 3.8)
 
 project(skyroom)
 
-set(SOURCE_EXE main.cpp)
-
+set(SOURCE_EXE application/main.cpp)
+set(SOURCE_EXE_HEADERS skyroom/include)
+set(SOURCE_EXE_SRC skyroom/src)
+include_directories(${SOURCE_EXE_HEADERS} ${SOURCE_EXE_SRC})
 add_subdirectory(libs/libskyroom)
-
-set(SKYROOM_LIB libs/libskyroom/src/skyroom.cpp)
-
-add_library(libskyroom STATIC ${SKYROOM_LIB})
-
-set(SKYROOM_LIB_HEADERS libs/libskyroom)
-
-include_directories(${SKYROOM_LIB_HEADERS})  
-
+add_library(libskyroom STATIC libs/libskyroom/libskyroom.cpp)
 add_executable(skyroom ${SOURCE_EXE})
-
+#add_subdirectory(libs/libskyroom)
 target_link_libraries(skyroom libskyroom)
-
-

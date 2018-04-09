@@ -1,0 +1,5 @@
+C:/Users/pu1s/OneDrive/Документы/GitHub/skyroom/builds/CMakeFiles/libskyroom.dir
+C:/Users/pu1s/OneDrive/Документы/GitHub/skyroom/builds/CMakeFiles/skyroom.dir
+C:/Users/pu1s/OneDrive/Документы/GitHub/skyroom/builds/CMakeFiles/ALL_BUILD.dir
+C:/Users/pu1s/OneDrive/Документы/GitHub/skyroom/builds/CMakeFiles/ZERO_CHECK.dir
+C:/Users/pu1s/OneDrive/Документы/GitHub/skyroom/builds/libs/libskyroom/CMakeFiles/ALL_BUILD.dir
